@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/../css/style.css">
+  <title>User Edit Page</title>
+</head>
+<body>
+  <h1> User Edit Page </h1>
+  <a href="/posts">All Posts</a>
+  <p></p>
+  <h3>Current</h3>
+  <div class="container">
+    <h3>User Name: <span class="title"><%= info.user_name %></span></h3>
+  </div>
+  <p></p>
+  <form action= <%= "/" + info.id + "?_method=PATCH"%> method="POST">
+    <label for="user_name"> Username: </label>
+    <input type="text" name="user_name" required />
+    <input type="submit" value="Submit"/>
+  </form>
+</body>
+</html>

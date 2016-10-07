@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Comment Page</title>
+</head>
+<body>
+  <h1> New Comment Page </h1>
+  <a href="/posts">All Posts</a>
+  <p></p>
+  <form action="/users/<%= userID %>/comments/new" method="POST" >
+  	<label for="content"> Content: </label>
+      <input type="text" name="content" required />
+      <p></p>
+      <input type="submit" value="Submit"/>
+  </form>
+</body>
+</html>

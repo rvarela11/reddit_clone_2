@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Post Page</title>
+</head>
+<body>
+  <h1> New Post Page </h1>
+  <a href="/posts">All Posts</a>
+  <p></p>
+  <form action="/users/<%= userID %>/posts/new" method="POST" >
+  	<label for="title"> Title: </label>
+  		<input type="text" name="title" autofocus required/>
+      <p></p>
+  	<label for="body"> Body: </label>
+      <input type="text" name="body" required />
+      <p></p>
+      <input type="submit" value="Submit"/>
+  </form>
+
+</body>
+</html>

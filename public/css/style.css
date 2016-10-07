@@ -1,0 +1,173 @@
+
+/*-------------------- HOME PAGE OUTSIDE --------------------*/
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../images/reddit4.jpg') center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h3, a, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.containerTop a{
+  margin-top: 1em;
+  padding: 1em;
+  border: 1px solid #000;
+  cursor: pointer;
+  display: inline-flex;
+  float: right;
+  text-decoration: none;
+  color: black;
+  font-size: 1.15em;
+}
+
+.containerTop a:hover {
+  color: #FF4500;
+  border: 1px solid #FF4500;
+}
+
+.container {
+  border: 1px solid #000;
+  margin-top: 2em;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/*-------------------- LOGIN/SIGN UP PAGE --------------------*/
+
+.bigContainer {
+  display: flex;
+}
+
+.smallContainer {
+  border: 1px solid #000;
+  margin: auto;
+  font-size: 2.5em;
+  padding: 0.5em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.smallContainer h1 {
+  font-size: 2.25em;
+  color: #2B60DE
+}
+
+.smallContainer a {
+  color: #2B60DE
+}
+
+#smallContainerH1Signup {
+  font-size: 1.90em;
+}
+
+input {
+  display: block;
+  margin-bottom: 1em !important;
+  font-size: 1em;
+  margin: auto;
+}
+
+/*-------------------- CONGRATS UP PAGE --------------------*/
+
+.bigContainer {
+  display: flex;
+}
+
+.smallContainer {
+  border: 1px solid #000;
+  margin: auto;
+  font-size: 2.5em;
+  padding: 0.5em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.smallContainer a:hover {
+  color: #FF4500;
+}
+
+/*-------------------- HOME PAGE INSIDE --------------------*/
+
+.insideContainer {
+  position: relative;
+}
+
+.welcomeLeft {
+  display: flex;
+}
+
+.welcomeLeft h1 {
+  margin: 0;
+  margin-top: 0.32em;
+  font-size: 2.5em;
+  margin-right: 0.5em;
+}
+
+.welcomeLeft h3 {
+  margin: 0;
+  margin-top: 0.30em;
+  font-size: 2.5em;
+  border-bottom: 2px solid #FF4500;
+}
+
+.nav {
+  margin-top: 1em;
+}
+
+.nav a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25em;
+  color: #2B60DE
+}
+
+.nav a:hover {
+  color: #FF4500;
+}
+
+.logout {
+  position: absolute;
+	right:0;
+	top: 0;
+}
+
+.logout a {
+    padding: 1em;
+    border: 1px solid #000;
+    cursor: pointer;
+    float: left;
+    text-decoration: none;
+    color: black;
+    font-size: 1.15em;
+}
+
+.logout a:hover {
+  color: #FF4500;
+  border: 1px solid #FF4500;
+}
+
+.bg2 {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../images/reddit2.jpg') center center;
+    background-repeat: no-repeat;
+    opacity: .1;
+    width: 100%;
+    height: 100%;
+}

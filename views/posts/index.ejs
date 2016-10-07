@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Post Page</title>
+  <link rel="stylesheet" type="text/css" href="/../css/style.css">
+</head>
+<body>
+  <div class="insideContainer">
+      <div class="welcomeLeft">
+        <h1> Welcome </h1>
+        <% info.forEach(function (data){ %>
+          <h3><%=data.user_name %></h3>
+        <% }) %>
+      </div>
+      <div class="nav">
+        <a href="/users">User Info</a>
+      </div>
+      <div class="logout">
+        <a href="/logout">Log out</a>
+      </div>
+  </div>
+  <div class="bg2"></div>
+  <div class="container">
+  <% usersAndPosts.forEach(function (post){ %>
+        <h3>Title: <span class="title"><%=post.title %></span></h3>
+        <h3>Body: <span class="title"><%=post.body %></span></h3>
+        <h3>User: <span class="title"><%=post.user_name %></span></h3>
+        <a href= <%= "/users/" + post.id + "/comments/new" %>> Add Comment </a><span> | </span>
+        <a href= <%= "/posts/" + post.id + "/comments" %>> View Comments </a>
+      </div>
+  <% }) %>
+</body>
+</html>
