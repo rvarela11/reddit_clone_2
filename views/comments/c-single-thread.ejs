@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Single Thread Comments/Post </title>
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
-  <title> Comments Single Thread </title>
 </head>
 <body>
-  <h1> Comments </h1>
-  <a href="/posts"> All Posts </a>
-  <p></p>
-
-  <% comments.forEach(function (comment){ %>
+  <div class="insideContainer">
+    <div class="welcomeLeft">
+      <h1> Comments </h1>
+    </div>
+    <div class="nav">
+      <a href="/posts">All Posts</a>
+    </div>
+  </div>
+  <div class="bg2"></div>
+  <% postInfo.forEach(function (postData){ %>
+    <div class="containerData">
+      <h3 class="title"><%=postData.title %></h3>
+      <p class="body"><%=postData.body %></p>
+    </div>
+  <% }) %>
+  <% info.forEach(function (data){ %>
     <div class="container">
-      <h3>Comment: <span class="title"><%=comment.content %></span></h3>
-      <h3>Post Title: <span class="title"><%=comment.post_id %></span></h3>
+      <p class="body"><%=data.content %></p>
+      <h4 class="user"><%=data.user_name %></h4>
     </div>
   <% }) %>
 </body>

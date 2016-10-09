@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/../css/style.css">
   <title>Edit Page</title>
+  <link rel="stylesheet" type="text/css" href="/../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css">
 </head>
 <body>
-  <h1> Post Edit Page </h1>
-  <a href="/posts">All Posts</a>
-  <p></p>
-  <h3>Current</h3>
-  <div class="container">
-    <h3>Title: <span class="title"><%=post.title %></span></h3>
-    <h3>Body: <span class="title"><%=post.body %></span></h3>
+  <div class="insideContainer postEditContainer">
+    <div class="welcomeLeft">
+      <h1> My Post Edit Page </h1>
+    </div>
+    <div class="nav">
+      <a href="/posts">All Posts</a><span> | </span>
+    </div>
+    <div class="container">
+      <h3 class="title"><%=post.title %></h3>
+      <p class="body"><%=post.body %></p>
+    </div>
+    <form class="formEdit" action= <%= "/posts/" + post.id + "?_method=PATCH"%> method="POST">
+    	<input type="text" name="title" value placeholder="Title" autofocus required/>
+      <input type="text" name="body" value placeholder="Body" required />
+      <button class="ui orange button" type="submit">Submit</button>
+    </form>
   </div>
-  <p></p>
-  <form action= <%= "/posts/" + post.id + "?_method=PATCH"%> method="POST">
-    <label for="title"> Title: </label>
-  		<input type="text" name="title" autofocus required/>
-      <p></p>
-  	<label for="body"> Body: </label>
-      <input type="text" name="body" required />
-      <p></p>
-      <input type="submit" value="Submit"/>
-  </form>
 </body>
 </html>

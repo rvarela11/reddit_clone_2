@@ -14,6 +14,11 @@
         <% }) %>
       </div>
       <div class="nav">
+        <% info.forEach(function (data){ %>
+          <a href= <%= "/users/" + data.id + "/posts/new" %>> New Post </a><span> | </span>
+          <a href= <%= "/users/" + data.id + "/posts" %>> My Posts </a><span> | </span>
+          <a href= <%= "/users/" + data.id + "/comments"%>> My Comments </a><span> | </span>
+        <% }) %>
         <a href="/users">User Info</a>
       </div>
       <div class="logout">
@@ -21,14 +26,17 @@
       </div>
   </div>
   <div class="bg2"></div>
-  <div class="container">
   <% usersAndPosts.forEach(function (post){ %>
-        <h3>Title: <span class="title"><%=post.title %></span></h3>
-        <h3>Body: <span class="title"><%=post.body %></span></h3>
-        <h3>User: <span class="title"><%=post.user_name %></span></h3>
+    <div class="container">
+      <h3 class="title"><%=post.title %></h3>
+      <p class="body"><%=post.body %></p>
+      <h4 class="user"><%=post.user_name %></h4>
+      <div class="containerLinks">
         <a href= <%= "/users/" + post.id + "/comments/new" %>> Add Comment </a><span> | </span>
         <a href= <%= "/posts/" + post.id + "/comments" %>> View Comments </a>
       </div>
+    </div>
   <% }) %>
+
 </body>
 </html>

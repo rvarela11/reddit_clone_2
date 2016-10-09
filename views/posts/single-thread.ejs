@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Single Thread Posts </title>
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
-  <title> Single Thread </title>
 </head>
 <body>
-  <h1> All User Posts </h1>
-  <a href="/posts">All Posts</a><span> | </span>
-  <a href="/users/<%= userID %>/posts/new">New Post</a>
-  <p></p>
+  <div class="insideContainer">
+    <div class="welcomeLeft">
+      <h1> My Posts </h1>
+    </div>
+    <div class="nav">
+      <a href="/posts">All Posts</a><span> | </span>
+      <a href="/users/<%= userID %>/posts/new">New Post</a>
+    </div>
+  </div>
+  <div class="bg2"></div>
   <% posts.forEach(function (post){ %>
     <div class="container">
-      <div class="containerTop">
-        <a href= <%= "/posts/" + post.id + "/edit"%>> Edit </a>
+      <h3 class="title"><%=post.title %></h3>
+      <p class="body"><%=post.body %></p>
+      <div class="containerLinks">
+        <a href= <%= "/posts/" + post.id + "/edit"%>> Edit </a><span> | </span>
         <form action= <%= "/posts/" + post.id + "?_method=DELETE"%> method="POST">
-          <input type="submit" value="X" class="btn btn-xs btn-danger">
+          <button type="submit">Delete</button>
         </form>
       </div>
-      <h3>Title: <span class="title"><%=post.title %></span></h3>
-      <h3>Body: <span class="title"><%=post.body %></span></h3>
     </div>
   <% }) %>
 </body>

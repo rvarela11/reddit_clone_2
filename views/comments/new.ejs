@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>New Comment Page</title>
+  <link rel="stylesheet" type="text/css" href="/../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css">
 </head>
 <body>
-  <h1> New Comment Page </h1>
-  <a href="/posts">All Posts</a>
-  <p></p>
-  <form action="/users/<%= userID %>/comments/new" method="POST" >
-  	<label for="content"> Content: </label>
-      <input type="text" name="content" required />
-      <p></p>
-      <input type="submit" value="Submit"/>
-  </form>
+  <div class="bigContainer">
+    <div class="smallContainer">
+      <h1 id="smallContainerH1CommentNew"> New Comment Page </h1>
+      <a href="/posts">All Posts</a>
+      <form class="formCommentNew" action="/users/<%= userID %>/comments/new" method="POST" >
+        <input type="text" name="content" value placeholder="Comment" required />
+        <button class="ui orange button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Single Thread Comments/User </title>
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
-  <title> Single Thread </title>
 </head>
 <body>
-  <h1> All User Comments </h1>
-  <a href="/posts">All Posts</a>
-  <p></p>
+  <div class="insideContainer">
+    <div class="welcomeLeft">
+      <h1> My Comments </h1>
+    </div>
+    <div class="nav">
+      <a href="/posts">All Posts</a>
+    </div>
+  </div>
+  <div class="bg2"></div>
   <% info.forEach(function (data){ %>
     <div class="container">
-      <div class="containerTop">
-        <a href= <%= "/comments/" + data.id + "/edit"%>> Edit </a>
+      <p class="body"><%=data.content %></p>
+      <h3 class="title"><%=data.title %></h3>
+      <div class="containerLinks">
+        <a href= <%= "/comments/" + data.id + "/edit"%>> Edit </a><span> | </span>
         <form action= <%= "/comments/" + data.id + "?_method=DELETE"%> method="POST">
-          <input type="submit" value="X" class="btn btn-xs btn-danger">
+          <button class="containerDelete" type="submit">Delete</button>
         </form>
       </div>
-      <h3>Comment: <span class="title"><%=data.content %></span></h3>
-      <h3>Title: <span class="title"><%=data.title %></span></h3>
-      <h3>Body: <span class="title"><%=data.body %></span></h3>
     </div>
   <% }) %>
 </body>

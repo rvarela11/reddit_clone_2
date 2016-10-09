@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/../css/style.css">
   <title>Edit Page</title>
+  <link rel="stylesheet" type="text/css" href="/../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css">
 </head>
 <body>
-  <h1> Comment Edit Page </h1>
-  <a href="/posts">All Posts</a>
-  <p></p>
-  <h3>Current</h3>
-  <div class="container">
-    <h3>Content: <span class="title"><%=comment.content %></span></h3>
+  <div class="insideContainer postEditContainer">
+    <div class="welcomeLeft">
+      <h1> My Comment Edit Page </h1>
+    </div>
+    <div class="nav">
+      <a href="/posts">All Posts</a><span> | </span>
+    </div>
+    <div class="container">
+      <p class="body"><%=comment.content %></p>
+    </div>
+    <form class="formEdit" action= <%= "/comments/" + comment.id + "?_method=PATCH"%> method="POST">
+      <input type="text" name="content" value placeholder="Comment" required />
+      <button class="ui orange button" type="submit">Submit</button>
+    </form>
   </div>
-  <p></p>
-  <form action= <%= "/comments/" + comment.id + "?_method=PATCH"%> method="POST">
-    <label for="content"> Content: </label>
-    <input type="text" name="content" required />
-    <input type="submit" value="Submit"/>
-  </form>
 </body>
 </html>

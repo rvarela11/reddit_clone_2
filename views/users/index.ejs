@@ -3,38 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Main User Page</title>
+  <link rel="stylesheet" type="text/css" href="/../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css">
 </head>
 <body>
-  <h1> User Home Page </h1>
-  <a href="/posts">All Posts</a>
-  <p></p>
-
-  <table border="1" class="table table-striped table-hover">
-    <thead>
-      <th> Username </th>
-      <th> New Post </th>
-      <th> Show User Posts </th>
-      <th> Show User Comments </th>
-      <th> Edit User Name </th>
-      <th> Delete User </th>
-    </thead>
-    <tbody>
+  <div class="bigContainer">
+    <div class="smallContainer">
+      <h1 id="smallContainerH1UserPage"> User Home Page </h1>
+      <a  href="/posts">All Posts</a>
       <% info.forEach(function(data) {%>
-        <tr>
-          <td> <%= data.user_name %> </td>
-          <td> <a href= <%= "/users/" + data.id + "/posts/new" %>> New Post </a></td>
-          <td> <a href= <%= "/users/" + data.id + "/posts" %>> Posts </a></td>
-          <td> <a href= <%= "/users/" + data.id + "/comments"%>> Comments </a></td>
-          <td> <a href= <%= "/users/" + data.id + "/edit"%>> Edit </a></td>
-          <td>
-            <form action= <%= "/" + data.id + "?_method=DELETE"%> method="POST">
-              <input type="submit" value="X" class="btn btn-xs btn-danger">
-            </form>
-          </td>
-        </tr>
+        <h3><%= data.user_name %></h3>
+      <div class="containerLinksUser">
+        <a href= <%= "/users/" + data.id + "/edit"%>> Edit </a><span> | </span>
+        <form class="deleteUserForm" action= <%= "/" + data.id + "?_method=DELETE"%> method="POST">
+          <button id="deleteUser" class="ui red button" type="submit">Delete</button>
+        </form>
+      </div>
       <% }) %>
-    </tbody>
-    <tfoot></tfoot>
-  </table>
+    </div>
+  </div>
 </body>
 </html>

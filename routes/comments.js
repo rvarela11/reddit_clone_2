@@ -50,11 +50,14 @@ router.get('/users/:id/comments', function(req, res) {
 
 router.get('/posts/:id/comments', function(req, res) {
   var userID = req.params.id;
-  knex('comments').where({
-    post_id: userID
-  }).then(function(comments) {
-    res.render("comments/c-single-thread", {
-      comments: comments
+  knex('posts').where('id', '=', userID).then(function(postInfo) {
+    knex('users').innerJoin('comments', 'users.id',
+      'comments.user_id').where('post_id', '=', userID).then(function(
+      info) {
+      res.render("comments/c-single-thread", {
+        postInfo: postInfo,
+        info: info
+      });
     });
   });
 });
