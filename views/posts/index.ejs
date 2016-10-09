@@ -6,9 +6,10 @@
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
 </head>
 <body>
+  <div class="bg2"></div>
   <div class="insideContainer">
       <div class="welcomeLeft">
-        <h1> Welcome </h1>
+        <h2> Welcome </h2>
         <% info.forEach(function (data){ %>
           <h3><%=data.user_name %></h3>
         <% }) %>
@@ -25,12 +26,11 @@
         <a href="/logout">Log out</a>
       </div>
   </div>
-  <div class="bg2"></div>
   <% usersAndPosts.forEach(function (post){ %>
     <div class="container">
-      <h3 class="title"><%=post.title %></h3>
+      <h4 class="title"><%=post.title %></h4>
       <p class="body"><%=post.body %></p>
-      <h4 class="user"><%=post.user_name %></h4>
+      <h5 class="user"><%=post.user_name %></h5>
       <div class="containerLinks">
         <a href= <%= "/users/" + post.id + "/comments/new" %>> Add Comment </a><span> | </span>
         <a href= <%= "/posts/" + post.id + "/comments" %>> View Comments </a>

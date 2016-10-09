@@ -6,19 +6,19 @@
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
 </head>
 <body>
+  <div class="bg2"></div>
   <div class="insideContainer">
     <div class="welcomeLeft">
-      <h1> My Posts </h1>
+      <h2> My Posts </h2>
     </div>
     <div class="nav">
       <a href="/posts">All Posts</a><span> | </span>
       <a href="/users/<%= userID %>/posts/new">New Post</a>
     </div>
   </div>
-  <div class="bg2"></div>
   <% posts.forEach(function (post){ %>
     <div class="container">
-      <h3 class="title"><%=post.title %></h3>
+      <h4 class="title"><%=post.title %></h4>
       <p class="body"><%=post.body %></p>
       <div class="containerLinks">
         <a href= <%= "/posts/" + post.id + "/edit"%>> Edit </a><span> | </span>

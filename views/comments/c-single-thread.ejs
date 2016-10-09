@@ -6,18 +6,18 @@
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
 </head>
 <body>
+  <div class="bg2"></div>
   <div class="insideContainer">
     <div class="welcomeLeft">
-      <h1> Comments </h1>
+      <h2> Comments </h2>
     </div>
     <div class="nav">
       <a href="/posts">All Posts</a>
     </div>
   </div>
-  <div class="bg2"></div>
   <% postInfo.forEach(function (postData){ %>
     <div class="containerData">
-      <h3 class="title"><%=postData.title %></h3>
+      <h4 class="title"><%=postData.title %></h4>
       <p class="body"><%=postData.body %></p>
     </div>
   <% }) %>

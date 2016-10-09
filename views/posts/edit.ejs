@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css">
 </head>
 <body>
+  <div class="bg2"></div>
   <div class="insideContainer postEditContainer">
     <div class="welcomeLeft">
-      <h1> My Post Edit Page </h1>
+      <h2> My Post Edit Page </h2>
     </div>
     <div class="nav">
       <a href="/posts">All Posts</a><span> | </span>
     </div>
     <div class="container">
-      <h3 class="title"><%=post.title %></h3>
+      <h4 class="title"><%=post.title %></h4>
       <p class="body"><%=post.body %></p>
     </div>
-    <form class="formEdit" action= <%= "/posts/" + post.id + "?_method=PATCH"%> method="POST">
+    <form class="formEditC" action= <%= "/posts/" + post.id + "?_method=PATCH"%> method="POST">
     	<input type="text" name="title" value placeholder="Title" autofocus required/>
       <input type="text" name="body" value placeholder="Body" required />
       <button class="ui orange button" type="submit">Submit</button>

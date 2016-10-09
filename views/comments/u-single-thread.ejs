@@ -6,19 +6,19 @@
   <link rel="stylesheet" type="text/css" href="/../css/style.css">
 </head>
 <body>
+  <div class="bg2"></div>
   <div class="insideContainer">
     <div class="welcomeLeft">
-      <h1> My Comments </h1>
+      <h2> My Comments </h2>
     </div>
     <div class="nav">
       <a href="/posts">All Posts</a>
     </div>
   </div>
-  <div class="bg2"></div>
   <% info.forEach(function (data){ %>
     <div class="container">
       <p class="body"><%=data.content %></p>
-      <h3 class="title"><%=data.title %></h3>
+      <h4 class="title"><%=data.title %></h4>
       <div class="containerLinks">
         <a href= <%= "/comments/" + data.id + "/edit"%>> Edit </a><span> | </span>
         <form action= <%= "/comments/" + data.id + "?_method=DELETE"%> method="POST">
