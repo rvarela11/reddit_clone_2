@@ -1,0 +1,4 @@
+<a href= <%= "/posts/" + post.id + "/edit"%>> Edit </a><span> | </span>
+<form action= <%= "/posts/" + post.id + "?_method=DELETE"%> method="POST">
+  <button type="submit">Delete</button>
+</form>

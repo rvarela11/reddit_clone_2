@@ -9,6 +9,7 @@ var express = require("express"),
   authRouter = require("./routes/auth"),
   usersRouter = require("./routes/users"),
   postsRouter = require("./routes/posts"),
+  posts_users_id = require("./routes/posts_users_id"),
   commentsRouter = require("./routes/comments"),
   cookieParser = require('cookie-parser'),
   cookieSession = require('cookie-session');
@@ -32,6 +33,7 @@ app.use(indexRouter);
 app.use(authRouter);
 app.use(usersRouter);
 app.use(postsRouter);
+app.use('/users/:id', posts_users_id);
 app.use(commentsRouter);
 
 app.get('/posts', function(req, res, next) {

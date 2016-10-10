@@ -21,10 +21,9 @@
       <h4 class="title"><%=post.title %></h4>
       <p class="body"><%=post.body %></p>
       <div class="containerLinks">
-        <a href= <%= "/posts/" + post.id + "/edit"%>> Edit </a><span> | </span>
-        <form action= <%= "/posts/" + post.id + "?_method=DELETE"%> method="POST">
-          <button type="submit">Delete</button>
-        </form>
+        <% if (userID  === cookie) { %>
+           <% include ../partials/post-edit-button.ejs %>
+          <% } %>
       </div>
     </div>
   <% }) %>

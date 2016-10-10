@@ -12,11 +12,7 @@
     <div class="smallContainer">
       <h2> New Post Page </h2>
       <a class="smallContainerA" href="/posts">All Posts</a>
-      <form class="formEdit" action="/users/<%= userID %>/posts/new" method="POST" >
-      		<input type="text" name="title" value placeholder="Title" autofocus required/>
-          <input type="text" name="body" value placeholder="Body" required />
-          <button class="ui orange button" type="submit">Submit</button>
-      </form>
+      <% include ../partials/post-form %>
     </div>
   </div>
 </body>

@@ -227,11 +227,17 @@ input {
   border-bottom: 1px solid red;
 }
 
+/*-------------------- POST EDIT PAGE --------------------*/
+
+.postEditContainer{
+  padding-left: 5%;
+}
+
 /*-------------------- COMMENTS PAGE --------------------*/
 
 .containerData {
 margin-bottom: 1.25em;
-padding: 0.5em;
+padding: 1em;
 }
 
 /*-------------------- NEW COMMENT PAGE --------------------*/
