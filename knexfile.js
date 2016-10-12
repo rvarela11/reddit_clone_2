@@ -4,20 +4,28 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: //'postgres://localhost/reddit_clone',
-    {
+    connection: {
       host: 'localhost',
-      database: 'rc2-dev',
-    },
+      database: 'rc2-dev'
+    }
   },
 
   test: {
     client: 'pg',
-    connection: //'postgres//localhost/reddit_clone_test',
-    {
+    connection: {
       host: 'localhost',
-      database: 'rc2-dev',
+      database: 'rc2-dev'
+    }
+  },
+
+  production: {
+    client: 'pg',
+    connection: {
+      database: 'my_db',
+      user: 'username',
+      password: 'password'
     }
   }
+
 
 };
