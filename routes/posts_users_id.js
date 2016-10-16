@@ -1,30 +1,10 @@
 'use strict';
 
-var express = require("express"),
+const express = require("express"),
   router = express.Router({
     mergeParams: true
   }),
-  knex = require("../db/knex"),
-  cookieSession = require('cookie-session');
-
-function checkUser(req, res, next) {
-  let cookieUserID = Number.parseInt(req.session.user.id);
-  let userID = Number.parseInt(req.params.id);
-  if (cookieUserID === userID) {
-    next();
-  } else {
-    res.send('no way jose');
-  }
-}
-//:id/....
-// router.param('id', (req, res, next, id) => {
-// res.locals.user_id = id;
-// })
-
-router.use(cookieSession({
-  name: 'trackify',
-  secret: 'some_secret_key'
-}));
+  knex = require("../db/knex");
 
 router.get('/posts/new', function(req, res) {
   var userID = req.params.id;
@@ -60,7 +40,6 @@ router.get('/posts', function(req, res) {
       cookie: req.session.user.id
     });
   });
-
 });
 
 router.get('/posts/:id/edit', function(req, res) {

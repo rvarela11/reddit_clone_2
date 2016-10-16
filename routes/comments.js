@@ -1,14 +1,8 @@
 'use strict';
 
-var express = require("express"),
+const express = require("express"),
   router = express.Router(),
-  knex = require("../db/knex"),
-  cookieSession = require('cookie-session');
-
-router.use(cookieSession({
-  name: 'trackify',
-  secret: 'some_secret_key'
-}));
+  knex = require("../db/knex");
 
 router.get('/users/:id/comments/new', function(req, res) {
   var userID = req.params.id;

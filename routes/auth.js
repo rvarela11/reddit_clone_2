@@ -1,9 +1,9 @@
 'use strict';
 
-var express = require("express");
-var router = express.Router();
-var knex = require("../db/knex");
-var bcrypt = require('bcrypt');
+const express = require("express"),
+  router = express.Router(),
+  knex = require("../db/knex"),
+  bcrypt = require('bcrypt');
 
 router.get('/signup', function(req, res, next) {
   res.render('signup/index');

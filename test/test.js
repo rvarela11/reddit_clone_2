@@ -1,9 +1,8 @@
-var expect = require('chai').expect;
-var request = require('supertest');
-var app = require('../server.js');
-
-var config = require('../knexfile')['test'];
-var knex = require('knex')(config);
+const expect = require('chai').expect,
+  request = require('supertest'),
+  app = require('../server.js'),
+  config = require('../knexfile')['test'],
+  knex = require('knex')(config);
 
 describe('Home Page', function() {
   it('should say Sign Up', function(done) {
@@ -27,6 +26,24 @@ describe('Login Page', function() {
   it('should say Login Page', function(done) {
     request(app).get('/login').end(function(err, res) {
       expect(res.text).to.include('Login Page');
+      done();
+    });
+  });
+});
+
+describe('Logout Page', function() {
+  it('should redirect to the home page', function(done) {
+    request(app).get('/logout').end(function(err, res) {
+      expect(res.header['location']).to.include('/');
+      done();
+    });
+  });
+});
+
+describe('User Home Page', function() {
+  it('should say User Home Page', function(done) {
+    request(app).get('/users').end(function(err, res) {
+      expect(200);
       done();
     });
   });

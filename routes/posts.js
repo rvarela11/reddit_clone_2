@@ -1,9 +1,8 @@
 'use strict';
 
-var express = require("express"),
+const express = require("express"),
   router = express.Router(),
-  knex = require("../db/knex"),
-  cookieSession = require('cookie-session');
+  knex = require("../db/knex");
 
 router.get('/posts/:id/edit', function(req, res) {
   knex('posts').where({
