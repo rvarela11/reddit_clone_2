@@ -7,6 +7,7 @@ Technologies used:
 1. HTML
 2. CSS
 3. JavaScript
-4. Express
-5. Knex.js
-6. Behavior Testing
+4. Node 
+5. Express
+6. Knex.js
+7. Behavior Testing
